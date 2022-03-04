@@ -1,0 +1,20 @@
+<element src="../../common/nav/nav.hml"></element>
+<div style="flex-direction : column;">
+    <nav title="编辑资料"></nav>
+    <list style="flex: 1;">
+        <list-item clickeffect="false">
+            <div id="avatarContainer">
+                <div style="flex-direction : column; align-items : center;" onclick="testGetPhotoInternalAbility">
+                    <div>
+                        <image src="{{ avatarURL }} " id="avatarImg">
+                        </image>
+                        <image src="{{ avatarURLEx }}" id="avatarEXImg"></image>
+                    </div>
+                    <label>
+                        {{ tips }}
+                    </label>
+                </div>
+            </div>
+        </list-item>
+        </list>
+</div>

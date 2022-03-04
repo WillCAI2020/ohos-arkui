@@ -1,0 +1,24 @@
+<div style="
+        height: 50px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+        ">
+    <image src="{{$r('app.media.back')}}"  onclick="back"
+           style="object-fit: contain;height: 22px;width: 40px;">
+
+    </image>
+
+    <div style="flex: 1;">
+
+    </div>
+
+    <text style="font-size: 21px; margin-right: 50px; letter-spacing: 3px; font-family: HYQiHei-65S;">
+        {{title}}
+    </text>
+
+    <div style="flex: 1;">
+
+    </div>
+</div>
