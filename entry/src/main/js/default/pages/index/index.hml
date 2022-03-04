@@ -1,0 +1,14 @@
+<element src="../../common/BottomNavBar/BottomNavBar.hml"></element>
+
+<element src="../HomePage/HomePage.hml"></element>
+<element src="../PostList/PostList.hml"></element>
+<element src="../User/User.hml"></element>
+
+<div style="flex-direction: column; scrollbar-width: 0px;">
+
+    <homepage if="{{ cindex == 0}}" is-login="{{isLogin}}" ></homepage>
+    <postlist if="{{cindex == 1}}" is-login="{{isLogin}}" ></postlist>
+    <user if="{{cindex == 2}}" is-login="{{isLogin}}" style="flex: 1;"></user>
+    <bottomnavbar @event-type1="textClicked"></bottomnavbar>
+
+</div>

@@ -1,0 +1,17 @@
+<!--底部菜单栏鸿蒙必修嵌套在父容器中start-->
+<div class="bottomview" style="background-color: #F3F3F3;">
+    <block for="{{ menus }}">
+        <div class="content" onclick="changecontent({{ $idx }})">
+            <div class="imges">
+                <image src="{{ !(cinidex == $idx) ? $item.img1 : $item.img2 }}"
+                       style="height : 100%; object-fit : contain;">
+                </image>
+            </div>
+            <div class="text">
+                <text class="{{ cinidex == $idx ? 'a' : 'b' }}">
+                    {{ $item.text }}
+                </text>
+            </div>
+        </div>
+    </block>
+</div>

@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10px;
+    color: #a4a4a4;
+}
+#inputPhone {
+    margin: 20fp;
+    font-size: 18fp;
+    background-color: transparent;
+    border-bottom-width: 1px;
+    border-bottom-color: #BFBFBF;
+    placeholder-color: #DDDDDD;
+}
+
+#inputCode {
+    margin: 20fp;
+    font-size: 18px;
+    background-color: transparent;
+    border-bottom-width: 1px;
+    border-bottom-color: #BFBFBF;
+    placeholder-color: #DDDDDD;
+}
+
+button:disabled{
+    background-color: #f2f2f2;
+    text-color: #979797;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+}

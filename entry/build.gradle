@@ -1,0 +1,54 @@
+apply plugin: 'com.huawei.ohos.hap'
+apply plugin: 'com.huawei.ohos.decctest'
+apply plugin: 'com.huawei.agconnect'
+
+// 在文件头部定义JS模板代码生成路径
+def jsOutputDir = project.file("src/main/js/default/common/api").toString()
+
+
+//For instructions on signature configuration, see https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide_debug_device-0000001053822404#section1112183053510
+ohos {
+    compileSdkVersion 7
+    defaultConfig {
+        compatibleSdkVersion 6
+        // 在ohos -> defaultConfig中设置JS模板代码生成路径
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["jsOutputDir": jsOutputDir] // JS模板代码生成赋值
+            }
+        }
+    }
+    showInServiceCenter true
+    buildTypes {
+        release {
+            proguardOpt {
+                proguardEnabled false
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+    }
+    compileOptions {
+        f2pautogenEnabled true // 此处为启用js2java-codegen工具的开关
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    testImplementation 'junit:junit:4.13.1'
+    ohosTestImplementation 'com.huawei.ohos.testkit:runner:2.0.0.200'
+
+
+    implementation 'com.huawei.agconnect:agconnect-core-harmony:1.2.0.300'
+    implementation 'com.huawei.agconnect:agconnect-remoteconfig-harmony:1.2.0.300'
+    implementation 'com.huawei.agconnect:agconnect-applinking-harmony:1.2.0.300'
+    implementation 'com.huawei.agconnect:agconnect-crash-harmony:1.2.0.300'
+    implementation "com.huawei.agconnect:agconnect-auth-harmony:1.2.0.300"
+    implementation 'com.huawei.agconnect:agconnect-function-harmony:1.2.0.300'
+    implementation 'com.huawei.agconnect:agconnect-appmessaging-harmony:1.2.0.300'
+
+    implementation 'io.openharmony.tpc.thirdlib:logansquare:1.0.3'
+    annotationProcessor 'io.openharmony.tpc.thirdlib:logansquare:1.0.3'
+}
+decc {
+    supportType = ['html','xml']
+}

@@ -1,0 +1,84 @@
+        if (index != this.cinidex) {
+            this.cinidex = index
+            switch (index) {
+                case 0:
+                    router.push({
+                        uri: 'pages/index/index',
+                        params: {
+                            isLogin: this.isLogin
+                        }
+                    })
+                    break;
+                case 1:
+                    router.push({
+                        uri: 'pages/PostList/PostList',
+                        params: {
+                            isLogin: this.isLogin
+                        }
+                    })
+                    break;
+
+                case 2:
+                    router.push({
+                        uri: 'pages/User/User',
+                        params: {
+                            isLogin: this.isLogin
+                        }
+                    })
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+
+
+
+变暗
+    onShow(){
+        const el = this.$refs.test;
+        var ctx = el.getContext('2d',{ antialias: true })
+        var img = new Image()
+        img.src = './common/images/png/icon_app.png'
+        img.onload = function(){
+            ctx.drawImage(img,0,0,90,90)
+        }
+            // 降低50%的亮度
+        ctx.putImageData(this.changeLuminance(ctx.getImageData(0, 0, 90, 90), -0.5), 0, 0)
+    },
+    // 修改图片亮度, imgdata为从canvas获取到的rgba数组，value为需要增加或减少的亮度值（0~1）
+    changeLuminance (imgdata, value) {
+        const data = imgdata.data
+        const rgbhsvEl = new rgbhsv();
+        for (let i = 0; i < data.length; i+=4) {
+            const hsv = rgbhsvEl.rgb2hsv([data[i], data[i + 1], data[i + 2]])
+            hsv[2] *= (1 + value)
+            const rgb = rgbhsvEl.hsv2rgb([...hsv])
+            data[i] = rgb[0];
+            data[i + 1] = rgb[1];
+            data[i + 2] = rgb[2];
+        }
+        return imgdata
+    }
+
+
+    onShow(){
+        const el = this.$refs.test;
+        var ctx = el.getContext('2d',{ antialias: true })
+        var img1 = new Image()
+        var img2 = new Image()
+        img1.src = './common/images/png/icon_app.png'
+        img2.src = './common/images/png/camera.png'
+        ctx.save()
+        ctx.arc(45,45,45,0,2*Math.PI)
+        ctx.fillStyle = 'rgb(255,0,0)'
+        ctx.stroke()
+        ctx.fillStyle = 'rgb(81, 16, 16)'
+        ctx.globalAlpha = 0
+        ctx.fill()
+        ctx.clip()
+        ctx.drawImage(img1,0,0,90,90)
+        ctx.drawImage(img2,35,35,20,20)
+        ctx.restore()
+    },

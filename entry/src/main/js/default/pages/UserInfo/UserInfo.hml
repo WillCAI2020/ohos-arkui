@@ -1,0 +1,36 @@
+<element src="../../common/nav/nav.hml"></element>
+<div style="flex-direction: column;">
+    <nav title="编辑资料"></nav>
+    <list>
+            <list-item clickeffect="false">
+                <div style="justify-content : center; align-items : center; width : 100%;
+                        background-color : white;
+                        padding-top : 20px;
+                        padding-bottom : 20px;
+                        margin-bottom: 10px;
+
+                        ">
+                    <div style="flex-direction : column;  align-items: center; " >
+                        <div>
+                            <image src="{{ avatarURL }} " style="
+                                    border : 1px;
+                                    border-radius : 45px; height : 90px; width : 90px; object-fit : contain;
+                                    filter: blur(2px);
+                                    ">
+                            </image>
+                            <image src="{{avatarURLEx}}" style="
+                                    position: absolute;
+                                    left: 30px;
+                                    top: 30px;
+                                    width: 30px; height: 30px;object-fit: contain;"></image>
+                        </div>
+
+                        <label style="font-size : 16px; margin-top : 5px; letter-spacing : 2px; font-family : sans-serif;">
+                            {{ tips }}
+                        </label>
+                    </div>
+                </div>
+            </list-item>
+    </list>
+
+</div>

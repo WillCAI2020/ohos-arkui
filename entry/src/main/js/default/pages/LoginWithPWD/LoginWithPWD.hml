@@ -1,0 +1,56 @@
+<div style="flex-direction: column;">
+    <div style="flex-direction: row; padding: 10px;">
+        <image src="{{$r('app.media.close')}}" style="margin: 10px; width: 20px;height: 20px;object-fit: contain;"></image>
+        <div style="flex: 1;"></div>
+    </div>
+
+    <text style="padding: 10px;font-size: 20px;text-align: center;">
+        登录
+    </text>
+
+    <text style="font-size: 13px;color: #a4a4a4;text-align: center;">
+        未登录的手机号验证后将自动创建账号
+    </text>
+
+    <input placeholder="手机号/邮箱/用户名"
+           onchange="changePhone"
+            >
+        {{mobile}}
+    </input>
+
+    <input placeholder="密码"
+           onchange="changePwd"
+           type="password">
+        {{password}}
+    </input>
+
+    <text onclick="navToFindPass"
+          style="font-size: 13px;color: #a4a4a4;text-align: right;padding-right: 10px;">
+        忘记密码？
+    </text>
+
+
+    <button style="background-color: #121212;padding: 10px;margin: 10px;
+            width: 100%;
+            "
+            disabled="{{!canLogin}}"
+            waiting="{{logining}}"
+            onclick="login"
+            >
+        登录
+    </button>
+
+    <button show="true"
+            style="background-color: transparent;
+                    padding: 10px;
+                    margin: 10px;
+                    width: 100%;
+                    text-color: #121212;
+                    "
+            onclick="navToLogInWithCode"
+            >
+        验证码登录
+    </button>
+
+    <div style="flex: 1;"></div>
+</div>

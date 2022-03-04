@@ -1,0 +1,79 @@
+<element src="../../common/nav/nav.hml"></element>
+<div style="flex-direction : column;">
+    <nav></nav>
+
+    <text style="padding : 10px; font-size : 20px; text-align : center;">
+        登录
+    </text>
+
+    <text show="{{ ! sent }}"
+          style="font-size : 13px; color : #a4a4a4; text-align : center;">
+        未登录的手机号验证后将自动创建账号
+    </text>
+
+    <text show="{{ sent }}" style="font-size : 13px; color : #a4a4a4; text-align : center;">
+        验证码已发送至{{ mobile }}
+    </text>
+
+<!-- 手机号输入：验证码未发出时显示该输入框，发出后不显示 -->
+    <input placeholder="请输入手机号"
+           show="{{ ! sent }}"
+           type="number"
+           maxlength="11"
+           onchange="changePhone"
+           focusable="{{ inputFocusEn }}"
+           id='inputPhone'
+            >
+        {{ mobile }}
+    </input>
+
+<!-- 验证码输入：验证码未发出时不显示该输入框，发出后显示 -->
+    <div
+            style="width : 100%;
+                    justify-content : center;
+                    align-content : center;">
+        <input
+                id="inputCode"
+                type="number" maxlength="6"
+                onchange="verifyCode" show="{{ sent }}"
+                >
+            {{ code }}
+        </input>
+    </div>
+
+
+<!-- 验证码未发出时显示，发出后不显示 -->
+    <button show="{{ ! sent }}"
+            style="background-color : #121212; padding : 10px; margin : 10px;
+                    width : 100%;
+                    "
+            disabled="{{ ! canGetCode || sent }}"
+            waiting="{{ getting }}"
+            onclick="gettingCode"
+            >
+        {{ retryCode }}
+    </button>
+
+    <text show="{{ showRemainTime }}" style="font-size : 13px; color : #a4a4a4; text-align : center;">
+        验证码已发送，{{ remainTime }}s后重新获取
+    </text>
+
+<!-- 切换界面 账号密码登录 -->
+    <button show="{{ ! sent }}"
+            style="background-color : transparent;
+                    padding : 10px;
+                    margin : 10px;
+                    width : 100%;
+                    text-color : #121212;
+                    text-align : center;
+                    "
+            onclick="navTologInWithPwd"
+            >
+        账号密码登录
+    </button>
+
+    <div style="flex : 1;" on:click="hideKeyBoard">
+
+    </div>
+
+</div>

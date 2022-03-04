@@ -1,0 +1,17 @@
+{
+  "data": {
+    "title": "Title",
+    "detail": "Text",
+    "iconTitle": "Picture"
+  },
+  "actions": {
+    "routerEvent": {
+      "action": "router",
+      "bundleName": "cn.crcrc.arkui_v2",
+      "abilityName": "cn.crcrc.arkui_v2.MainAbility",
+      "params": {
+        "message": "add detail"
+      }
+    }
+  }
+}

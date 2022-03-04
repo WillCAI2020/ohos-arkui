@@ -1,0 +1,86 @@
+<element src="../../common/nav/nav.hml"></element>
+<div style="flex-direction : column; background-color : ghostwhite; height: 100%;">
+    <list>
+        <list-item clickeffect="false">
+            <div style="justify-content : center; align-items : center; width : 100%;
+                    background-color : white;
+                    padding-top : 20px;
+                    padding-bottom : 20px;
+                    margin-bottom: 10px;
+                    ">
+
+            <!--border-bottom-color: #eedddd; border-bottom: 1px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;-->
+
+                <div style="flex-direction : column;  align-items: center;">
+                    <image src="{{ avatarURL }} " style="
+                            border : 1px;
+                            border-radius : 45px; height : 90px; width : 90px; object-fit : contain;
+                            border-color : whitesmoke;">
+                    </image>
+                    <label style="font-size : 16px; margin-top : 5px; letter-spacing : 2px; font-family : sans-serif;">
+                        {{ userName }}
+                    </label>
+                </div>
+            </div>
+        </list-item>
+
+        <list-item clickeffect="false" style="margin-bottom: 10px; flex-direction: column;">
+            <block for="{{itemList1}}">
+            <div style="flex-direction: row; width: 100%; align-items: center;
+                    padding: 10px; background-color: white;">
+                <image src="{{$item.itemIcon}}" style="height: 23px; width: 23px; object-fit: contain; margin-right: 10px;"></image>
+                <text style="font-size: 14px;">
+                    {{$item.itemName}}
+                </text>
+                <div style="flex: 1;">
+                </div>
+                <text style="font-size: 12px; font-weight: 300; margin-right: 10px;">
+                    {{$item.itemValue}}
+                </text>
+                <image src="/common/images/png/GoArrow.png"
+                       style="object-fit: contain;height: 18px;width: 20px;">
+                </image>
+            </div>
+            </block>
+        </list-item>
+
+        <list-item clickeffect="false" style="margin-bottom: 10px; flex-direction: column;">
+            <block for="{{itemList2}}">
+                <div style="flex-direction: row; width: 100%; align-items: center;
+                        padding: 10px; background-color: white;">
+                    <image src="{{$item.itemIcon}}" style="height: 23px; width: 23px; object-fit: contain; margin-right: 10px;"></image>
+                    <text style="font-size: 14px;">
+                        {{$item.itemName}}
+                    </text>
+                    <div style="flex: 1;">
+                    </div>
+                    <text style="font-size: 12px; font-weight: 300; margin-right: 10px;">
+                        {{$item.itemValue}}
+                    </text>
+                    <image src="/common/images/png/GoArrow.png"
+                           style="object-fit: contain;height: 18px;width: 20px;">
+                    </image>
+                </div>
+            </block>
+        </list-item>
+        <list-item clickeffect="false" style="margin-bottom: 10px; flex-direction: column;">
+            <block for="{{itemList3}}">
+                <div style="flex-direction: row; width: 100%; align-items: center;
+                        padding: 10px; background-color: white;">
+                    <image src="{{$item.itemIcon}}" style="height: 23px; width: 23px; object-fit: contain; margin-right: 10px;"></image>
+                    <text style="font-size: 14px;">
+                        {{$item.itemName}}
+                    </text>
+                    <div style="flex: 1;">
+                    </div>
+                    <text style="font-size: 12px; font-weight: 300; margin-right: 10px;">
+                        {{$item.itemValue}}
+                    </text>
+                    <image src="/common/images/png/GoArrow.png"
+                           style="object-fit: contain;height: 18px;width: 20px;">
+                    </image>
+                </div>
+            </block>
+        </list-item>
+    </list>
+</div>

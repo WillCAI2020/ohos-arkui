@@ -1,0 +1,43 @@
+.bottomview{
+    width: 100%;
+    height: 50px;
+/**border-top:3px solid red;**/
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around ;
+    align-content: center;
+}
+.content{
+    height: 100%;
+    width: 22%;
+/**border:1px solid black;**/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.imges{
+    height: 23px;
+/*8border:2px solid blue;**/
+
+}
+.text{
+    width: 80%;
+/**border:2px solid green ;**/
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+}
+.a{
+    color: red;
+    font-size: 11fp;
+    font-weight: bold;
+}
+.b{
+    font-size: 11fp;
+    color: grey;
+    font-weight: bold;
+}
